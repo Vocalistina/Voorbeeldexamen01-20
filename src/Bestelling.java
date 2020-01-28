@@ -31,6 +31,8 @@ public class Bestelling {
         String gekozenProduct = toevoegingProduct.nextLine();
         toevoegingProduct.nextLine();
         if (gekozenProduct.equals("1")) {
+            System.out.println("Welke soort Deotype is dit, VAPO of STICK? ");
+            DeoType soort = toevoegingProduct.nextLine();
             toevoegingLijst = new AfterShave(productNummer,merk,naam,volume,prijs);
         } else if (gekozenProduct.equals("2")){
             toevoegingLijst = new Deodorant(productNummer,merk,naam,volume,prijs);
