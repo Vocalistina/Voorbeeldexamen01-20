@@ -13,7 +13,7 @@ public class Bestelling {
     }
 
     //METHODES
-    public Array voegProductToe(Product[] artikel) {
+    public Array voegProductToe(Product[] newArtikel) {
         Scanner toevoegingProduct = new Scanner(System.in);
         Product
         System.out.println("NIEUW PRODUCT TOEVOEGEN\n " +
