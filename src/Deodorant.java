@@ -1,6 +1,6 @@
 public class Deodorant extends Product {
     DeoType soort;
-    public Deodorant(int productNummer, String merk, String naam, int volume, double prijs) {
+    public Deodorant(int productNummer, String merk, String naam, int volume, double prijs, DeoType soort) {
         super(productNummer, merk, naam, volume, prijs);
     }
 

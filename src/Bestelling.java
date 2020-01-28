@@ -32,10 +32,14 @@ public class Bestelling {
         toevoegingProduct.nextLine();
         if (gekozenProduct.equals("1")) {
             System.out.println("Welke soort Deotype is dit, VAPO of STICK? ");
-            DeoType soort = toevoegingProduct.nextLine();
-            toevoegingLijst = new AfterShave(productNummer,merk,naam,volume,prijs);
+            DeoType soort = DeoType.valueOf(toevoegingProduct.nextLine());
+            toevoegingProduct.nextLine();
+            toevoegingLijst = new AfterShave(productNummer,merk,naam,volume,prijs,soort);
         } else if (gekozenProduct.equals("2")){
-            toevoegingLijst = new Deodorant(productNummer,merk,naam,volume,prijs);
+            System.out.println("Welke soort Deotype is dit, VAPO of STICK? ");
+            DeoType soort = DeoType.valueOf(toevoegingProduct.nextLine());
+            toevoegingProduct.nextLine();
+            toevoegingLijst = new Deodorant(productNummer,merk,naam,volume,prijs,soort);
         } else if (gekozenProduct.equals("3")) {
             toevoegingLijst = new Parfum(productNummer,merk,naam,volume,prijs);
         } else {
@@ -65,6 +69,7 @@ public class Bestelling {
     public void toonPerMerk(){
         super.toString();
     }
+
     /*
     public void toonParfums(){
         for (int i = 0; i < bestelling.length ; i++) {
