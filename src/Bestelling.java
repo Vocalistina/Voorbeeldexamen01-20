@@ -13,12 +13,12 @@ public class Bestelling {
     }
 
     //METHODES
-    public Array voegProductToe(Product[] newArtikel) {
+    public Product[] voegProductToe(Product[] newArtikel) {
         Scanner toevoegingProduct = new Scanner(System.in);
-        Product
+        Product[] newartikel = new Product[];
         System.out.println("NIEUW PRODUCT TOEVOEGEN\n " +
                 "Merk: ");
-        return  artikel;
+        return  newArtikel;
 
     }
     public void verwijderProduct(int productNummer) {
