@@ -7,28 +7,71 @@ public class Bestelling {
 
     //CONSTRUCTORS
 
-    public Bestelling(Array[] bestelling, int productNummer) {
-        this.bestelling = bestelling;
-        this.productNummer = productNummer;
+    public Bestelling() {
+
     }
 
     //METHODES
-    public Product[] voegProductToe(Product[] newArtikel) {
+    public Product voegProductToe(Product nieuwProduct) {
+        Product toevoegingLijst = null;
         Scanner toevoegingProduct = new Scanner(System.in);
-        Product[] newartikel = new Product[];
-        System.out.println("NIEUW PRODUCT TOEVOEGEN\n " +
-                "Merk: ");
-        return  newArtikel;
+        System.out.println("NIEUW PRODUCT TOEVOEGEN" );
+        System.out.println("Merk: ");
+        String merk = toevoegingProduct.nextLine();
+        toevoegingProduct.nextLine();
+        productNummer = productNummer +1;
+        System.out.println("Naam: ");
+        String naam = toevoegingProduct.nextLine();
+        toevoegingProduct.nextLine();
+        System.out.println("Volume: ");
+        int volume = toevoegingProduct.nextInt();
+        System.out.println("Prijs iBTW: ");
+        double prijs = toevoegingProduct.nextDouble();
+        System.out.println("Welk soort product wil je toevoegen? 1= Aftershave, 2= Deodorant, 3=Parfum");
+        String gekozenProduct = toevoegingProduct.nextLine();
+        toevoegingProduct.nextLine();
+        if (gekozenProduct.equals("1")) {
+            toevoegingLijst = new AfterShave(productNummer,merk,naam,volume,prijs);
+        } else if (gekozenProduct.equals("2")){
+            toevoegingLijst = new Deodorant(productNummer,merk,naam,volume,prijs);
+        } else if (gekozenProduct.equals("3")) {
+            toevoegingLijst = new Parfum(productNummer,merk,naam,volume,prijs);
+        } else {
+            System.out.println("Dit product bestaat niet.");
+        }
+        if (equals(toevoegingLijst)) {
+            System.out.println("Het product is reeds toegevoegd.");
+        }
+        return  toevoegingLijst;
 
-    }
+    }/*
     public void verwijderProduct(int productNummer) {
         Scanner productverwijderen = new Scanner(System.in);
         System.out.println("PRODUCT VERWIJDEREN\n" +
                 "Verwijder productnummer: ");
         int teVerwijderenProductnummer = productverwijderen.nextInt();
-        for (:
+        for (int nummer :
              ) {
             
         }
+      */
+    public void toonLijst() {
+        for (int i = 0; i < bestelling.length ; i++) {
+            super.toString();
+        }
     }
-}
+    public void toonPerMerk(){
+        super.toString();
+    }
+    /*
+    public void toonParfums(){
+        for (int i = 0; i < bestelling.length ; i++) {
+            while (bestelling.getClass() == Parfum) {
+
+            }
+        }
+
+
+        }*/
+    }
+
