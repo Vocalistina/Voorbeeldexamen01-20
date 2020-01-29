@@ -7,12 +7,20 @@ public abstract class Product {
     private int volume;
     private double prijs;  //incl. BTW
 
+    //CONSTRUCTOR
+    public Product(int productNummer, String merk, String naam, int volume, double prijs) {
+        this.productNummer = productNummer;
+        this.merk = merk;
+        this.naam = naam;
+        this.volume = volume;
+        this.prijs = prijs;
+    }
 
     //METHODES
     public String getProductCode() {
         StringBuilder maakproductCode = new StringBuilder();
-        maakproductCode.append(this.merk.substring(0, 4).toUpperCase());
-        maakproductCode.append(this.naam.substring(0,4).toUpperCase());
+        maakproductCode.append(this.merk.substring(0, 3).toUpperCase());
+        maakproductCode.append(this.naam.substring(0,3).toUpperCase());
         maakproductCode.append(this.volume);
         String productCode = maakproductCode.toString();
         for (String karakter : productCode.split("")) {
@@ -88,15 +96,5 @@ public abstract class Product {
         this.prijs = prijs;
     }
 
-    //CONSTRUCTOR
-    public Product(int productNummer, String merk, String naam, int volume, double prijs) {
-        this.productNummer = productNummer;
-        this.merk = merk;
-        this.naam = naam;
-        this.volume = volume;
-        this.prijs = prijs;
 
-
-
-    }
 }

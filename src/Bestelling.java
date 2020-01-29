@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Bestelling {
     Product[] bestelling = new Product[99];
     int productNummer = 1000;
+    int indexBestelling = 0;
 
     //CONSTRUCTORS
 
@@ -13,12 +14,14 @@ public class Bestelling {
 
     //METHODES
     public void voegProductToe(Product nieuwProduct) {
-       if (equals(nieuwProduct)){
-           this.productNummer++;
-        } else {
+        if (equals(nieuwProduct)){
            System.out.println("Het product is reeds toegevoegd.");
+        } else {
+           this.productNummer++;
+           nieuwProduct.setProductNummer(this.productNummer);
+           bestelling[indexBestelling] = nieuwProduct;
+           indexBestelling++;
        }
-
     }
 
     public void verwijderProduct(int productNummer) {
@@ -35,16 +38,18 @@ public class Bestelling {
     }
 
     public void toonParfums(){
-        for (Product parfum : bestelling) {
-            if (parfum instanceof Parfum) {
-                System.out.println(parfum.toString());
+        for (Product onderdeel : bestelling) {
+            if (onderdeel instanceof Parfum) {
+                System.out.println(onderdeel.toString());
             }
         }
         }
     public int getAantalProducten() {
         int count = 0;
         for (int i = 0; i < bestelling.length; i++) {
-            count++;
+            if (bestelling[i] != null){
+                count++;
+            }
         }
         return count;
     }
