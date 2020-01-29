@@ -29,18 +29,24 @@ public class Bestelling {
     }
 
     public void toonLijst() {
-        for (Product i : bestelling) {
-            System.out.println(i.toString());
+            for (int i = 0; i < bestelling.length; i++) {
+                if (bestelling[i] != null) {
+                    System.out.println(bestelling[i].toString());
+                }
+            }
         }
-    }
+
     public void toonPerMerk(){
-        super.toString();
+        for (int i = 0; i < bestelling.length; i++) {
+            if (bestelling[i] != null){
+            }
+        }
     }
 
     public void toonParfums(){
-        for (Product onderdeel : bestelling) {
-            if (onderdeel instanceof Parfum) {
-                System.out.println(onderdeel.toString());
+        for (Product item : bestelling) {
+            if (item instanceof Parfum) {
+                System.out.println(item.toString());
             }
         }
         }

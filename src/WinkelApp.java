@@ -9,9 +9,9 @@ public class WinkelApp {
 			bestelling.voegProductToe(artikel);
 		}
 
-		/*bestelling.toonLijst();
-
-		/*System.out.println("\nVan het merk Georgio Armani:");
+		bestelling.toonLijst();
+/*
+		System.out.println("\nVan het merk Georgio Armani:");
 		bestelling.toonPerMerk("Georgio Armani");*/
 
 		System.out.println("\nAlle Parfums:");
