@@ -2,7 +2,7 @@ import java.sql.Array;
 import java.util.Scanner;
 
 public class Bestelling {
-    Product[] bestelling = new Product[100];
+    Product[] bestelling = new Product[99];
     int productNummer = 1000;
 
     //CONSTRUCTORS
@@ -13,19 +13,18 @@ public class Bestelling {
 
     //METHODES
     public void voegProductToe(Product nieuwProduct) {
+       if (equals(nieuwProduct)){
+           this.productNummer++;
+        } else {
+           System.out.println("Het product is reeds toegevoegd.");
+       }
 
     }
-    /*
+
     public void verwijderProduct(int productNummer) {
-        Scanner productverwijderen = new Scanner(System.in);
-        System.out.println("PRODUCT VERWIJDEREN\n" +
-                "Verwijder productnummer: ");
-        int teVerwijderenProductnummer = productverwijderen.nextInt();
-        for (int nummer :
-             ) {
 
         }
-      */
+
     public void toonLijst() {
         for (Product i : bestelling) {
             System.out.println(i.toString());
