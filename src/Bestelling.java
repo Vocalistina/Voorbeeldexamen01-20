@@ -23,7 +23,7 @@ public class Bestelling {
 
     public void verwijderProduct(int productNummer) {
 
-        }
+    }
 
     public void toonLijst() {
         for (Product i : bestelling) {
@@ -41,6 +41,13 @@ public class Bestelling {
             }
         }
         }
+    public int getAantalProducten() {
+        int count = 0;
+        for (int i = 0; i < bestelling.length; i++) {
+            count++;
+        }
+        return count;
+    }
 
 
     }
