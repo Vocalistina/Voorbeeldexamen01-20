@@ -22,17 +22,8 @@ public abstract class Product {
         maakproductCode1.append(this.merk.substring(0,3).toUpperCase());
         maakproductCode1.append(this.naam.substring(0,3).toUpperCase());
         maakproductCode1.append(this.volume);
-        String maakProductCode2 = maakproductCode1.toString();
-        String[] maakProductCode3 = maakProductCode2.split("",1);
-        for (int i = 0; i < maakProductCode3.length; i++) {
-            if (maakProductCode3[i].equals(" ")) {
-                maakProductCode3[i].equals("_");
-            } else {
-                maakProductCode3[i].toUpperCase();
-            }
-        }
-        String productCode = maakProductCode3.toString();
-
+        String productCode = maakproductCode1.toString();
+        productCode.replace(' ', '_');
         return productCode;
     }
 
