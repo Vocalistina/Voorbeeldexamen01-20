@@ -10,9 +10,9 @@ public class WinkelApp {
 		}
 
 		bestelling.toonLijst();
-/*
+
 		System.out.println("\nVan het merk Georgio Armani:");
-		bestelling.toonPerMerk("Georgio Armani");*/
+		bestelling.toonPerMerk("Georgio Armani");
 
 		System.out.println("\nAlle Parfums:");
 		bestelling.toonParfums();

@@ -18,13 +18,11 @@ public abstract class Product {
 
     //METHODES
     public String getProductCode() {
-        StringBuilder maakproductCode1 = new StringBuilder();
-        maakproductCode1.append(this.merk.substring(0,3).toUpperCase());
-        maakproductCode1.append(this.naam.substring(0,3).toUpperCase());
-        maakproductCode1.append(this.volume);
-        String productCode = maakproductCode1.toString();
-        productCode.replace(' ', '_');
-        return productCode;
+        StringBuilder productCode = new StringBuilder();
+        productCode.append(this.merk.substring(0,3).toUpperCase());
+        productCode.append(this.naam.substring(0,3).toUpperCase());
+        productCode.append(this.volume);
+        return productCode.toString().replace(" ", "_");
     }
 
     @Override

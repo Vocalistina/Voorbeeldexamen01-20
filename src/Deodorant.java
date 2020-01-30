@@ -1,11 +1,12 @@
 public class Deodorant extends Product {
-    DeoType soort;
+    private DeoType soort;
     public Deodorant(int productNummer, String merk, String naam, int volume, double prijs, DeoType soort) {
         super(productNummer, merk, naam, volume, prijs);
+        this.soort = soort;
     }
 
     public DeoType getSoort() {
-        return soort;
+        return this.soort;
     }
 
     @Override
@@ -13,7 +14,7 @@ public class Deodorant extends Product {
         StringBuilder maakNieuweOutput = new StringBuilder();
         maakNieuweOutput.append(super.toString());
         maakNieuweOutput.append(" ");
-        maakNieuweOutput.append(this.soort);
+        maakNieuweOutput.append(this.getSoort());
         String printOutput = maakNieuweOutput.toString();
         return printOutput;
     }

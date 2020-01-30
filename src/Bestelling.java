@@ -2,9 +2,9 @@ import java.sql.Array;
 import java.util.Scanner;
 
 public class Bestelling {
-    Product[] bestelling = new Product[99];
-    int productNummer = 1000;
-    int indexBestelling = 0;
+    private Product[] bestelling = new Product[99];
+    private int productNummer = 1000;
+    private int indexBestelling = 0;
 
     //CONSTRUCTORS
 
@@ -36,11 +36,10 @@ public class Bestelling {
             }
         }
 
-    public void toonPerMerk(){
+    public void toonPerMerk(String gezochteNaam){
         for (int i = 0; i < bestelling.length; i++) {
-            if (bestelling[i] != null){
-                String merk1 = bestelling[i].getMerk();
-
+            if (bestelling[i] != null && bestelling[i].getMerk().equals(gezochteNaam)){
+                System.out.println(bestelling[i].toString());
             }
         }
     }
