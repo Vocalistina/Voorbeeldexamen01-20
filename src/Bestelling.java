@@ -1,16 +1,10 @@
 import java.sql.Array;
 import java.util.Scanner;
 
-public class Bestelling {
-    private Product[] bestelling = new Product[99];
+public class Bestelling implements Berekenbaar {
+    private Product[] bestelling = new Product[100];
     private int productNummer = 1000;
     private int indexBestelling = 0;
-
-    //CONSTRUCTORS
-
-    public Bestelling() {
-
-    }
 
     //METHODES
     public void voegProductToe(Product nieuwProduct) {
@@ -25,7 +19,15 @@ public class Bestelling {
     }
 
     public void verwijderProduct(int productNummer) {
+        for (int i = 0; i < bestelling.length; i++) {
+            if(bestelling[i].getProductNummer() == productNummer) {
+                bestelling[i] = null;
+                System.out.printf("Product met productnummer %s werd verwijderd", productNummer);
+            } else {
+                System.out.println("Dit product zit niet in je bestelling.");
+            }
 
+        }
     }
 
     public void toonLijst() {
@@ -62,5 +64,15 @@ public class Bestelling {
     }
 
 
+    @Override
+    public double totalePrijs() {
+        double prijs = 0;
+        for (int i = 0; i < bestelling.length ; i++) {
+            if (bestelling[i] != null){
+                prijs = prijs + bestelling[i].getPrijs();
+            }
+        }
+        return prijs;
     }
+}
 

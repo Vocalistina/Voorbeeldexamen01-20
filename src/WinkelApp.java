@@ -1,6 +1,6 @@
 public class WinkelApp {
 	public static void main(String[] args) {
-		System.out.printf("Oplossing van %s %s\n", "Jouw naam ", "Student PXL");
+		System.out.printf("Oplossing van %s %s\n", "Nadine Vaesen ", "Student PXL");
 
 		Bestelling bestelling = new Bestelling();
 		Product[] lijst = Data.artikels;
@@ -16,8 +16,8 @@ public class WinkelApp {
 
 		System.out.println("\nAlle Parfums:");
 		bestelling.toonParfums();
-/*
-		System.out.printf("\nTotale prijs: �%.2f", bestelling.totalePrijs());*/
+
+		System.out.printf("\nTotale prijs: �%.2f", bestelling.totalePrijs());
 
 	}
 }
