@@ -18,22 +18,27 @@ public abstract class Product {
 
     //METHODES
     public String getProductCode() {
-        StringBuilder maakproductCode = new StringBuilder();
-        maakproductCode.append(this.merk.substring(0, 3).toUpperCase());
-        maakproductCode.append(this.naam.substring(0,3).toUpperCase());
-        maakproductCode.append(this.volume);
-        String productCode = maakproductCode.toString();
-        for (String karakter : productCode.split("")) {
-            if (karakter.equals(" ")){
-                karakter = "_";
+        StringBuilder maakproductCode1 = new StringBuilder();
+        maakproductCode1.append(this.merk.substring(0,3).toUpperCase());
+        maakproductCode1.append(this.naam.substring(0,3).toUpperCase());
+        maakproductCode1.append(this.volume);
+        String maakProductCode2 = maakproductCode1.toString();
+        String[] maakProductCode3 = maakProductCode2.split("",1);
+        for (int i = 0; i < maakProductCode3.length; i++) {
+            if (maakProductCode3[i].equals(" ")) {
+                maakProductCode3[i].equals("_");
+            } else {
+                maakProductCode3[i].toUpperCase();
             }
         }
+        String productCode = maakProductCode3.toString();
+
         return productCode;
     }
 
     @Override
     public String toString() {
-        String printOutput = String.format("%s Merk:  %s30Naam:  %s30Volume: %10s  Prijs: %5s Code: %s15",
+        String printOutput = String.format("%s Merk:  %-20s  Naam:  %-25s  Volume: %10dml Prijs: %5s Code: %s15",
                 this.productNummer,this.merk,this.naam,this.volume,this.prijs,getProductCode());
         return printOutput;
     }

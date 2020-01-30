@@ -39,6 +39,8 @@ public class Bestelling {
     public void toonPerMerk(){
         for (int i = 0; i < bestelling.length; i++) {
             if (bestelling[i] != null){
+                String merk1 = bestelling[i].getMerk();
+
             }
         }
     }
